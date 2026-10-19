@@ -146,26 +146,3 @@ Six tests run using Node's built-in test runner (no network, AWS, or MongoDB dep
 
 These test the backend ranking function in isolation. **Manual integration testing with a running MongoDB and private S3** is still required to validate the entire stack before submission.
 
-## Submission evidence — under 3 minutes
-
-**Suggested 2-minute video outline:**
-
-- **0:00–0:20** Show two user choices and a cold-start default feed; identify the current user.
-- **0:20–0:50** Asha: Save a Colombo apartment, View another; show recommendation reasons.
-- **0:50–1:20** Nimal: Contact a Kandy Toyota, Save another vehicle; show his different top results.
-- **1:20–1:40** Refresh or reopen browser and switch back to Asha: her property ranking persists; return to Nimal to confirm isolation.
-- **1:40–2:00** Show six passing tests and private S3 sample images / approved alternative proof.
-- **2:00–2:20** Explain weights (1/4/6), one-time click cap and demotion of already-interacted items.
-
-Capture screenshots if a short video is inconvenient. Explain actual implementation state (e.g. don't claim S3 if only a mock was used).
-
-## What to improve if time remains
-
-A few things can be discussed as trade-offs in an interview: better loading states, API integration tests, finer category filters, an explicit Saved view, signal decay over time, stronger request schema validation, and better candidate selection for many listings. Avoid spending assignment time on authentication, ML, deployment or unnecessary visual polish.
-
-## Before committing
-
-- Confirm your `.env` is excluded (`git status --ignored`), and no credentials or tokens appear in tracked files.
-- `npm test` and `npm run build` pass. Make sure you actually complete end-to-end actions against MongoDB.
-- Ensure the correct S3/approved mock status is documented. No AWS charge should be incurred.
-- Put screenshots or a recording in the repository (`evidence/`) or link it from README; do not put confidential credentials or personal account screenshots there.
